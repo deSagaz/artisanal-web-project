@@ -1,0 +1,167 @@
+/* Possibility to add font files */
+/*@import url('https://fonts.googleapis.com/css?family=Raleway|Sawarabi+Mincho');*/
+
+body {
+    margin: 0;
+
+    /* Declare CSS variables*/
+    --bg-color: #e4e1e1;
+    --primary-color: #741515;
+    --medium-color: grey;
+    --body-text-color: black;
+    --header-font: 'Times New Roman', serif;
+    --body-font: 'Arial', sans-serif;
+}
+
+#main-wrapper {
+    display: grid;
+    grid-template-columns: 65vw 35vw;
+    min-height: 100vh;
+}
+
+/* START IMAGE SECTION */
+#image-wrapper {
+    position: relative;
+}
+
+.image {
+    background-size: cover;
+    background-position: center;
+    position: absolute; /* To allow image to overlap*/
+
+    width: 100%;
+    height: 100%;
+}
+
+#image {
+    background-image: url('../img/avatar.jpg');
+
+    z-index: 1;
+}
+
+#image-overlay {
+    background-image: url('../img/avatar-overlay.jpg');
+
+    z-index: 2;
+
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+#image-overlay.show {
+    opacity: 1;
+}
+/* END IMAGE SECTION */
+
+/* START TEXT SECTION */
+#text-wrapper {
+    background: #e4e1e1;
+    overflow-y: scroll;
+    max-height: 100%;
+}
+#text {
+    padding: 10px 30px;
+}
+
+h1, .sub-title {
+    font-family: var(--header-font);
+}
+
+h1 {
+    color: var(--primary-color);
+    font-weight: normal;
+
+    margin-bottom: 5px;
+    border-bottom: 2px solid;
+}
+
+.sub-title {
+    color: var(--medium-color);
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+h2, p {
+    font-family: var(--body-font);
+}
+
+h2 {
+    font-size: 1.1em;
+    font-weight: bold;
+
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+p {
+    color: var(--body-text-color);
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+/* Drop Cap */
+#text p:first-of-type:first-letter {
+    color: var(--primary-color);
+    float: left;
+    font-family: var(--header-font);
+    font-size: 3.5em;
+    padding-top: .14em;
+    padding-right: 4px;
+}
+
+/* Hyperlink styling */
+#text a {
+    color: var(--primary-color);
+    text-decoration: underline dotted;
+}
+#text a:visited {
+    color: var(--medium-color);
+}
+/* END TEXT SECTION */
+
+/* Text Selection*/
+body *::selection {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* 
+ * End-of-Paragraph symbol
+ * Adapted from https://codepen.io/ibrahimjabbari/pen/ozinB
+ */
+hr {
+    border: none;
+    text-align: center;
+}
+hr:after {
+    content: '§';
+    display: inline-block;
+    position: relative;
+    padding: 0 10px;
+    color: #8c8b8b;
+    font-size: 30px;
+    transform: rotate(90deg);
+}
+
+/* RESPONSIVE DESIGN START */
+@media(max-width: 1300px) {
+    #main-wrapper {
+        grid-template-columns: 55vw 45vw;
+    }
+}
+@media(max-width: 1000px) {
+    #main-wrapper {
+        display: block; /* Ignore columns now */
+    }
+    #text-wrapper {
+        max-height: none;
+        min-height: 50vh;
+    }
+    h1, .sub-title {
+        text-align: center;
+    }
+    #image-wrapper {
+        height: 50vh;
+    }
+}
+/* RESPONSIVE DESIGN END */
