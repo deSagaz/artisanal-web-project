@@ -69,7 +69,7 @@ header nav ul li a img {
 
 main {
     display: grid;
-    grid-template-columns: 65vw 35vw;
+    grid-template-columns: 65fr 35fr;
     min-height: var(--main-height);
     overflow: hidden;
 }
@@ -201,7 +201,7 @@ div.doc-end:after {
 /* RESPONSIVE DESIGN START */
 @media(max-width: 1300px) {
     main {
-        grid-template-columns: 55vw 45vw;
+        grid-template-columns: 55fr 45fr;
     }
 }
 @media(max-width: 1000px) {
