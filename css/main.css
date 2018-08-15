@@ -1,5 +1,5 @@
-/* Possibility to add font files */
-/*@import url('https://fonts.googleapis.com/css?family=Raleway|Sawarabi+Mincho');*/
+/* Add font files */
+@import url('https://fonts.googleapis.com/css?family=PT+Serif|Roboto');
 
 body {
     margin: 0;
@@ -16,11 +16,11 @@ body {
     --main-text-color: black;
 
     --header-font: var(--body-font);
-    --heading-font: 'Times New Roman', serif;
-    --body-font: 'Arial', sans-serif;
+    --heading-font: 'PT Serif', serif;
+    --body-font: 'Roboto', sans-serif;
 
     --header-height: 40px;
-    --main-height: calc(100vh -  var(--header-height));
+    --main-height: calc(100vh - var(--header-height));
 }
 
 /* START HEADER SECTION */
@@ -124,7 +124,7 @@ h1, .sub-title {
 
 h1 {
     color: var(--primary-color);
-    font-weight: normal;
+    font-weight: bold;
 
     margin-bottom: 5px;
     border-bottom: 2px solid;
