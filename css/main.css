@@ -8,6 +8,7 @@ body {
     --bg-color: #e4e1e1;
     --primary-color: #741515;
     --medium-color: grey;
+    --light-color: white;
     --body-text-color: black;
     --header-font: 'Times New Roman', serif;
     --body-font: 'Arial', sans-serif;
@@ -55,7 +56,7 @@ body {
 
 /* START TEXT SECTION */
 #text-wrapper {
-    background: #e4e1e1;
+    background: var(--bg-color);
     overflow-y: scroll;
     max-height: 100vh;
 }
@@ -122,7 +123,7 @@ p {
 /* Text Selection*/
 body *::selection {
     background-color: var(--primary-color);
-    color: #fff;
+    color: var(--light-color);
 }
 
 /* 
@@ -137,7 +138,7 @@ div.doc-end:after {
     display: inline-block;
     position: relative;
     padding: 0 10px;
-    color: #8c8b8b;
+    color: var(--medium-color);
     font-size: 30px;
     transform: rotate(90deg);
 }
